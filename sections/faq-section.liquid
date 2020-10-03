@@ -1,0 +1,80 @@
+<div id="page" class="row">
+   {% if section.settings.check-box %}
+  <div class="span12 details faqpage">
+       <h1 class="p25">{{ page.title }} </h1>
+        
+    
+    {%for block in section.blocks%}
+    <div class="accordion" id="section1{{forloop.index}}"> {{block.settings.question_text}}</span></div>
+      <div class="container">
+      <div class="content">
+      <p>{{block.settings.answer_text}} </p>
+      </div>
+      </div>
+    {%endfor%}
+    
+        
+  </div> 
+    {% endif %} 
+</div> 
+    
+{% schema %}
+  {
+    "name": "Faq",
+    "settings": [
+                 
+        {
+      "type": "checkbox",
+      "id": "check-box",
+      "label": {
+        "da": "Roter automatisk slides",
+        "de": "Auto-rotieren der Slides",
+        "en": "Show FAQ",
+        "es": "Rotar las diapositivas automáticamente",
+        "fi": "Käännä diat automaattisesti",
+        "fr": "Rotation automatique des diapositives",
+        "hi": "ऑटो-रोटेट स्लाइड",
+        "it": "Ruota slide automaticamente",
+        "ja": "スライドの自動切り替え",
+        "ko": "슬라이드 자동 회전",
+        "nb": "Autoroter lysbildene",
+        "nl": "Dia's automatisch draaien",
+        "pt-BR": "Rodar os slides automaticamente",
+        "pt-PT": "Reprodução automática de diapositivos",
+        "sv": "Auto-rotera bilder",
+        "th": "หมุนสไลด์อัตโนมัติ",
+        "zh-CN": "自动旋转幻灯片",
+        "zh-TW": "自動旋轉投影片"
+      },
+      "default": true
+    }
+   
+       ],
+    "blocks": [
+        {
+        "type": "text",
+        "name": "Add Question",
+        "settings": [
+       
+        {
+          "type": "text",
+          "id": "question_text",
+          "label": "Question "
+        },
+        {
+          "type": "richtext",
+          "id": "answer_text",
+          "label": "Anwser write here"
+        }
+        
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
